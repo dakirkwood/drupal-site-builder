@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+# This workflow enforces Drupal coding standards. PHPStan and PHPUnit
+# (kernel/unit) are run against a full Drupal site — see "Development" in
+# README.md for the ddev commands — because they require a bootstrapped Drupal
+# and a database that this standalone module checkout does not provide.
+jobs:
+  coding-standards:
+    name: PHPCS (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.1', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: PHP_CodeSniffer (Drupal standards)
+        run: composer phpcs

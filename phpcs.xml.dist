@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="drupal_site_builder">
+  <description>PHPCS configuration for the Drupal Site Builder module.</description>
+
+  <!-- Scan the module's own code. -->
+  <file>drupal_site_builder.module</file>
+  <file>src</file>
+  <file>tests</file>
+
+  <!-- Drupal and Drupal best-practice standards. -->
+  <rule ref="Drupal"/>
+  <rule ref="DrupalPractice"/>
+
+  <!-- File types to inspect. -->
+  <arg name="extensions" value="php,module,inc,install,test,profile,theme,yml"/>
+
+  <!-- Show sniff codes and progress; colourise output. -->
+  <arg value="sp"/>
+  <arg name="colors"/>
+
+  <!-- Never scan dependencies or VCS metadata. -->
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+</ruleset>

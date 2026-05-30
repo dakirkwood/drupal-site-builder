@@ -1,0 +1,14 @@
+name: Drupal Site Builder
+type: module
+description: Builds a site based on a CSV export of the build spec.
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:media
+  - drupal:paragraphs
+  - drupal:user
+  - drupal:block
+  - drupal:content_translation
+  - drupal:pathauto

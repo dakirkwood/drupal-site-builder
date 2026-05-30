@@ -1,0 +1,46 @@
+disableFields:
+  block_content: {  }
+  media:
+    - created
+    - path
+    - status
+    - uid
+  node:
+    - created
+    - path
+    - promote
+    - sticky
+    - uid
+  paragraph:
+    - created
+    - status
+  taxonomy_term:
+    - description
+    - path
+    - status
+nonTranslatableFields:
+  block_content:
+    - metatag
+    - status
+  media:
+    - created
+    - metatag
+    - path
+    - status
+    - thumbnail
+    - uid
+  node:
+    - created
+    - menu_link
+    - metatag
+    - path
+    - promote
+    - sticky
+    - uid
+  paragraph:
+    - created
+    - status
+  taxonomy_term:
+    - description
+    - path
+    - status

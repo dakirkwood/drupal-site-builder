@@ -1,0 +1,22 @@
+drupal_site_builder.settings:
+  type: config_object
+  label: 'Drupal Site Builder settings'
+  mapping:
+    disableFields:
+      type: sequence
+      label: 'Base fields to disable in form displays, keyed by entity type'
+      sequence:
+        type: sequence
+        label: 'Field machine names'
+        sequence:
+          type: string
+          label: 'Field machine name'
+    nonTranslatableFields:
+      type: sequence
+      label: 'Base fields to mark non-translatable, keyed by entity type'
+      sequence:
+        type: sequence
+        label: 'Field machine names'
+        sequence:
+          type: string
+          label: 'Field machine name'

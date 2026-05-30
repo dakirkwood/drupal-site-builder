@@ -1,0 +1,43 @@
+# PHPStan configuration for the Drupal Site Builder module.
+#
+# The mglaman/phpstan-drupal and phpstan/extension-installer dev dependencies
+# auto-register the Drupal extension. Run after `composer install` (which pulls
+# drupal/core-dev so Drupal API classes resolve), or run from within a Drupal
+# site that contains this module.
+#
+# Level 6 with two pragmatic blanket ignores:
+#
+#  1. The "no value type specified in iterable type array" findings. The
+#     Drush record contract is built around loose CSV-row arrays and report
+#     arrays whose value shapes vary per column; tightening every array<…>
+#     annotation across 13 record classes is a separate cleanup with no
+#     behavioural payoff. Revisit when the public surface stabilises.
+#
+#  2. The "unknown class" findings for optional contrib modules
+#     (paragraphs, pathauto) and the league/csv runtime dependency. These
+#     packages are declared in composer.json but may not be installed in
+#     every analysis environment; their absence is environmental, not a
+#     code defect.
+parameters:
+  level: 7
+  paths:
+    - src
+    - tests
+    - drupal_site_builder.module
+  excludePaths:
+    - vendor/*
+  ignoreErrors:
+    -
+      identifier: missingType.iterableValue
+    -
+      identifier: class.notFound
+      message: '#Drupal\\paragraphs\\Entity\\ParagraphsType#'
+    -
+      identifier: class.notFound
+      message: '#Drupal\\pathauto\\Entity\\PathautoPattern#'
+    -
+      identifier: class.notFound
+      message: '#Drupal\\pathauto\\PathautoPatternInterface#'
+    -
+      identifier: class.notFound
+      message: '#League\\Csv\\Reader#'

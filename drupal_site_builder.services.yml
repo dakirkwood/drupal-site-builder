@@ -1,0 +1,18 @@
+services:
+  drupal_site_builder.record_factory:
+    class: Drupal\drupal_site_builder\RecordFactory
+    arguments:
+      - '@transliteration'
+      - '@entity_type.manager'
+      - '@entity_type.bundle.info'
+      - '@entity_display.repository'
+      - '@plugin.manager.field.field_type'
+      - '@plugin.manager.field.widget'
+      - '@plugin.manager.field.formatter'
+      - '@file_system'
+      - '@messenger'
+      - '@logger.channel.drupal_site_builder'
+
+  logger.channel.drupal_site_builder:
+    parent: logger.channel_base
+    arguments: ['drupal_site_builder']
