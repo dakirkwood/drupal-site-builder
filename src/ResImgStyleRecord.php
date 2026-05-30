@@ -11,7 +11,7 @@ use Drupal\responsive_image\Entity\ResponsiveImageStyle;
  * Represents a single responsive-image-style row from the Build Spec.
  */
 class ResImgStyleRecord extends BuildSpecRecord {
-  use EcConsoleDebug;
+  use SbConsoleDebug;
 
   /**
    * The human-readable responsive image style label.

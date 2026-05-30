@@ -11,7 +11,7 @@ use Drupal\image\Entity\ImageStyle;
  * Represents a single image-style row from the Build Spec.
  */
 class ImgStyleRecord extends BuildSpecRecord {
-  use EcConsoleDebug;
+  use SbConsoleDebug;
 
   /**
    * The human-readable image style label.

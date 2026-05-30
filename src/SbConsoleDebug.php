@@ -14,7 +14,7 @@ use League\Csv\Reader;
  * classes) and never participates in the production code path — it exists so
  * the operator can inspect a single CSV row while iterating on a build.
  */
-trait EcConsoleDebug {
+trait SbConsoleDebug {
 
   /**
    * Prints a variable to the Drush console.

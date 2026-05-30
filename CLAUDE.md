@@ -36,7 +36,7 @@ Each record class:
 
 ### Supporting code
 
-- `EcConsoleDebug` — Trait mixed into record classes for console debugging.
+- `SbConsoleDebug` — Trait mixed into record classes for console debugging.
 - `MachineName` — Static utility to generate Drupal machine names from labels (lowercase, underscored, max 32 chars).
 - `config/install/drupal_site_builder.settings.yml` — Default settings defining which base fields to disable per entity type and which fields are non-translatable (used by the `dsbf` finish command).
 

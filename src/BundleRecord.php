@@ -22,7 +22,7 @@ use Psr\Log\LoggerInterface;
  * Represents a single bundle row from the Build Spec.
  */
 class BundleRecord extends BuildSpecRecord {
-  use EcConsoleDebug;
+  use SbConsoleDebug;
 
   /**
    * The pathauto URL alias pattern for this bundle.

@@ -20,7 +20,7 @@ use Psr\Log\LoggerInterface;
  * Represents a single field row from the Build Spec.
  */
 class FieldRecord extends BuildSpecRecord {
-  use EcConsoleDebug;
+  use SbConsoleDebug;
 
   /**
    * The bundle machine name this field belongs to.
