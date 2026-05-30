@@ -44,13 +44,13 @@ After all imports are complete, run `drush dsbf` to apply standard base field ov
    ```json
    {
        "type": "git",
-       "url": "git@github.com:electriccitizen/drupal_site_builder.git"
+       "url": "git@github.com:dakirkwood/drupal-site-builder.git"
    }
    ```
 
 3. Require the module as a dev dependency:
    ```bash
-   ddev composer require --dev electriccitizen/drupal_site_builder:dev-main
+   ddev composer require --dev dakirkwood/drupal_site_builder:dev-main
    ```
 
 4. Enable the module:
@@ -62,7 +62,7 @@ After all imports are complete, run `drush dsbf` to apply standard base field ov
 
 1. Add the submodule:
    ```bash
-   git submodule add git@github.com:electriccitizen/drupal_site_builder.git web/modules/custom/drupal_site_builder
+   git submodule add git@github.com:dakirkwood/drupal-site-builder.git web/modules/custom/drupal_site_builder
    ```
 
 2. Install the League/CSV dependency:
