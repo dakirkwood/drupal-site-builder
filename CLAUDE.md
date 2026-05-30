@@ -46,4 +46,4 @@ The Build Spec CSVs use specific column headers that map to record properties. K
 
 ## Installation (for development)
 
-This module is installed into a Drupal project either via Composer (`ddev composer require --dev electriccitizen/drupal_site_builder:dev-main`) or as a git submodule, then enabled with `drush en drupal_site_builder`.
+This module is installed into a Drupal project either via Composer (`ddev composer require --dev dakirkwood/drupal_site_builder:dev-main`) or as a git submodule, then enabled with `drush en drupal_site_builder`.
